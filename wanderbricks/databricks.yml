@@ -1,6 +1,6 @@
 # Declarative Automation Bundle configuration, more info here: https://docs.databricks.com/en/dev-tools/bundles/settings.html
 bundle:
-  name: "wanderbricks_start"
+  name: "wanderbricks"
 
 include:
   - resources/*.yml
@@ -23,7 +23,7 @@ targets:
       host: https://fevm-deco.cloud.databricks.com
     variables:
       catalog: deco_catalog
-      schema: default
+      schema: dev_${workspace.current_user.short_name}_schema
 
   # The 'prod' target, used for production deployment.
   prod:

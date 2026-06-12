@@ -1,6 +1,6 @@
 resources:
   pipelines:
-    new_pipeline_2026_06_09_13_18:
+    process_customer_reviews:
       name: Process Customer Reviews
       libraries:
         - glob:

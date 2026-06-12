@@ -1,0 +1,21 @@
+resources:
+  jobs:
+    Analyze_Customer_Reviews:
+      name: Analyze Customer Reviews
+      queue:
+        enabled: true
+      tasks:
+        - pipeline_task:
+            pipeline_id: 5156d161-aeb9-470a-b015-be518900aa7e
+          task_key: process_customer_reviews
+        - dashboard_task:
+            dashboard_id: 01f1664da44c1c339a078df66a2bc509
+            subscription: {}
+          depends_on:
+            - task_key: process_customer_reviews
+          task_key: update_dashboard
+      trigger:
+        pause_status: UNPAUSED
+        periodic:
+          interval: 1
+          unit: DAYS
