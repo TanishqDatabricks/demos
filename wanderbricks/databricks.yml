@@ -9,7 +9,7 @@ include:
 variables:
   catalog:
     description: The Unity Catalog catalog for pipeline output and dashboard queries
-    default: deco_catalog
+    default: dais2026_2
   schema:
     description: The Unity Catalog schema for pipeline output and dashboard queries
     default: default
@@ -20,20 +20,20 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://fevm-deco.cloud.databricks.com
+      host: https://dbc-c69ca1f0-d421.staging.cloud.databricks.com
     variables:
-      catalog: deco_catalog
+      catalog: dais2026_2
       schema: dev_${workspace.current_user.short_name}_schema
 
   # The 'prod' target, used for production deployment.
   prod:
     mode: production
     workspace:
-      host: https://fevm-deco.cloud.databricks.com
+      host: https://dbc-c69ca1f0-d421.staging.cloud.databricks.com
       # Use a stable shared deployment path for production artifacts.
       root_path: /Shared/.bundle/${bundle.name}/${bundle.target}
     variables:
-      catalog: deco_catalog
+      catalog: dais2026_2
       schema: default
     run_as:
       # Best practice for production is to run as a service principal instead of a personal user.

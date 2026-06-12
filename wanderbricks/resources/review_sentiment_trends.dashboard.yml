@@ -2,7 +2,7 @@ resources:
   dashboards:
     review_sentiment_trends:
       display_name: "Customer Review Sentiment Trends"
-      warehouse_id: 2be3f8ffb2251d96
+      warehouse_id: 18a3be4131c0f4f7
       dataset_catalog: ${var.catalog}
       dataset_schema: ${var.schema}
       serialized_dashboard: |
